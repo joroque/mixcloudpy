@@ -69,6 +69,19 @@ Cloudcast's identifier can also be a *name*:
 cloudcast = mc.get_cloudcast('spartacus', 'Party Time')
 ```
 
+## Categories
+
+Get categories by *slug*:
+
+```
+category = mc.get_category('tech-house')
+```
+
+Or by *name*:
+
+```
+category = mc.get_category('Tech House')
+```
 
 ## License
 
