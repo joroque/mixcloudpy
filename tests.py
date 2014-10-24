@@ -16,6 +16,11 @@ class TestUsers(unittest.TestCase):
         tag = self.mc.get_tag('house')
         self.assertEqual(tag['name'], 'House')
 
+    def test_get_artist(self):
+        """ Test GET /artist/<artist> """
+        artist = self.mc.get_artist('carl-cox')
+        self.assertEqual(artist['name'], 'Carl Cox')
+
 if __name__ == '__main__':
     unittest.main()
             

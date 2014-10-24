@@ -15,7 +15,7 @@ class Mixcloud(object):
         return self.request('tag/' + name)
 
     def get_artist(self, slug=None, name=None):
-        pass
+        return self.request('artist/' + slug)
 
     def get_cloudcast(self, username, slug=None, name=None):
         pass
