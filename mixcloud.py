@@ -1,4 +1,5 @@
 import requests
+from slugify import slugify
 
 class Mixcloud(object):
     api_base = 'http://api.mixcloud.com/'
@@ -11,12 +12,15 @@ class Mixcloud(object):
     def get_user(self, username):
         return self.request(username)
 
-    def get_tag(self, slug=None, name=None):
-        return self.request('tag/' + slug)
+    def get_tag(self, name):
+        name = slugify(unicode(name))
+        return self.request('tag/' + name)
 
-    def get_artist(self, slug=None, name=None):
-        return self.request('artist/' + slug)
+    def get_artist(self, name):
+        name = slugify(unicode(name))
+        return self.request('artist/' + name)
 
-    def get_cloudcast(self, username, slug=None, name=None):
-        return self.request(username + '/' + slug)
+    def get_cloudcast(self, username, name):
+        name = slugify(unicode(name))
+        return self.request(username + '/' + name)
 
