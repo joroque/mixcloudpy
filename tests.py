@@ -19,7 +19,7 @@ class TestUsers(unittest.TestCase):
     def test_get_tag_name(self):
         """ Test GET /tag/<tag> where <tag> is a name """
         tag = self.mc.get_tag('House')
-        self.assertEqual(tag['name'], 'House')
+        self.assertEqual(tag['key'], '/tag/house/')
 
     def test_get_artist_slug(self):
         """ Test GET /artist/<artist> where <artist> is a slug """
@@ -29,7 +29,7 @@ class TestUsers(unittest.TestCase):
     def test_get_artist_name(self):
         """ Test GET /artist/<artist> where <artist> is a name """
         artist = self.mc.get_artist('Carl Cox')
-        self.assertEqual(artist['name'], 'Carl Cox')
+        self.assertEqual(artist['slug'], 'carl-cox')
 
     def test_get_cloudcast_slug(self):
         """ Test GET /<username>/<cloudcast> where <cloudcast> is a slug """
@@ -39,7 +39,7 @@ class TestUsers(unittest.TestCase):
     def test_get_cloudcast_name(self):
         """ Test GET /<username>/<cloudcast> where <cloudcast> is a name """
         cloudcast = self.mc.get_cloudcast('spartacus', 'Party Time')
-        self.assertEqual(cloudcast['name'], 'Party Time')
+        self.assertEqual(cloudcast['slug'], 'party-time')
 
     def test_get_category_slug(self):
         """ Test GET /categories/<category> where <category> is a slug """
@@ -49,7 +49,7 @@ class TestUsers(unittest.TestCase):
     def test_get_category_name(self):
         """ Test GET /categories/<category> where <category> is a name """
         category = self.mc.get_category('Tech House')
-        self.assertEqual(category['name'], 'Tech House')
+        self.assertEqual(category['slug'], 'tech-house')
 
 if __name__ == '__main__':
     unittest.main()
