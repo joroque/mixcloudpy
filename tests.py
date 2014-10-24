@@ -21,6 +21,11 @@ class TestUsers(unittest.TestCase):
         artist = self.mc.get_artist('carl-cox')
         self.assertEqual(artist['name'], 'Carl Cox')
 
+    def test_get_cloudcast(self):
+        """ Test GET /<username>/<cloudcast> """
+        cloudcast = self.mc.get_cloudcast('spartacus', 'party-time')
+        self.assertEqual(cloudcast['name'], 'Party Time')
+
 if __name__ == '__main__':
     unittest.main()
             
