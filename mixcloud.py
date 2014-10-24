@@ -24,3 +24,7 @@ class Mixcloud(object):
         name = slugify(unicode(name))
         return self.request(username + '/' + name)
 
+    def get_category(self, name):
+        name = slugify(unicode(name))
+        return self.request('categories/' + name)
+

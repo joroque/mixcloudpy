@@ -41,6 +41,16 @@ class TestUsers(unittest.TestCase):
         cloudcast = self.mc.get_cloudcast('spartacus', 'Party Time')
         self.assertEqual(cloudcast['name'], 'Party Time')
 
+    def test_get_category_slug(self):
+        """ Test GET /categories/<category> where <category> is a slug """
+        category = self.mc.get_category('tech-house')
+        self.assertEqual(category['name'], 'Tech House')
+        
+    def test_get_category_name(self):
+        """ Test GET /categories/<category> where <category> is a name """
+        category = self.mc.get_category('Tech House')
+        self.assertEqual(category['name'], 'Tech House')
+
 if __name__ == '__main__':
     unittest.main()
             
