@@ -35,6 +35,12 @@ Get tags by *slug*:
 tag = mc.get_tag('house')
 ```
 
+Or by *name*:
+
+```
+tag = mc.get_tag('House')
+```
+
 ## Artists
 
 Get artists by *slug*:
@@ -42,6 +48,27 @@ Get artists by *slug*:
 ```
 artist = mc.get_artist('carl-cox')
 ```
+
+Or by *name*:
+
+```
+artist = mc.get_artist('Carl Cox')
+```
+
+## Cloudcasts
+
+Cloudcasts belong to users, so the *username* must be passed as argument:
+
+```
+cloudcast = mc.get_cloudcast('spartacus', 'party-time')
+```
+
+Cloudcast's identifier can also be a *name*:
+
+```
+cloudcast = mc.get_cloudcast('spartacus', 'Party Time')
+```
+
 
 ## License
 
