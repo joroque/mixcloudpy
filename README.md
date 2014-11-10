@@ -83,6 +83,16 @@ Or by *name*:
 category = mc.get_category('Tech House')
 ```
 
+## Authentication
+
+For the time being, authentication is only possible through the browser.
+
+This wrapper provides a method so you redirect your users to the Mixcloud authorization dialog.
+
+```python
+auth_dialog_uri = mc.get_oauth_uri(client_id, redirect_uri)
+```
+
 ## License
 
 Copyright &copy; 2014 Jorge Romero. Released under The MIT License.
