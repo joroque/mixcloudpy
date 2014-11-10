@@ -1,4 +1,4 @@
-mixcloudpy
+Mixcloudpy
 ==========
 
 A Python wrapper for the [Mixcloud API](http://www.mixcloud.com/developers/).
@@ -7,14 +7,14 @@ A Python wrapper for the [Mixcloud API](http://www.mixcloud.com/developers/).
 
 All methods are available thorugh the `Mixcloud` class:
 
-```
+```python
 import mixcloud
 mc = mixcloud.Mixcloud()
 ```
 
 All result sets are Python dictionaries:
 
-```
+```python
 house_tag = mc.get_tag('house')
 house_tag.keys() # [u'url', u'name', u'key']
 ```
@@ -23,7 +23,7 @@ house_tag.keys() # [u'url', u'name', u'key']
 
 Get users by *username*:
 
-```
+```python
 user = mc.get_user('romeroqj')
 ```
 
@@ -31,13 +31,13 @@ user = mc.get_user('romeroqj')
 
 Get tags by *slug*:
 
-```
+```python
 tag = mc.get_tag('house')
 ```
 
 Or by *name*:
 
-```
+```python
 tag = mc.get_tag('House')
 ```
 
@@ -45,13 +45,13 @@ tag = mc.get_tag('House')
 
 Get artists by *slug*:
 
-```
+```python
 artist = mc.get_artist('carl-cox')
 ```
 
 Or by *name*:
 
-```
+```python
 artist = mc.get_artist('Carl Cox')
 ```
 
@@ -59,13 +59,13 @@ artist = mc.get_artist('Carl Cox')
 
 Cloudcasts belong to users, so the *username* must be passed as argument:
 
-```
+```python
 cloudcast = mc.get_cloudcast('spartacus', 'party-time')
 ```
 
 Cloudcast's identifier can also be a *name*:
 
-```
+```python
 cloudcast = mc.get_cloudcast('spartacus', 'Party Time')
 ```
 
@@ -73,13 +73,13 @@ cloudcast = mc.get_cloudcast('spartacus', 'Party Time')
 
 Get categories by *slug*:
 
-```
+```python
 category = mc.get_category('tech-house')
 ```
 
 Or by *name*:
 
-```
+```python
 category = mc.get_category('Tech House')
 ```
 
