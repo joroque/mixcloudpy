@@ -1,4 +1,6 @@
+import os
 import unittest
+from urlparse import urlparse
 
 import mixcloud
 
@@ -50,6 +52,24 @@ class TestUsers(unittest.TestCase):
         """ Test GET /categories/<category> where <category> is a name """
         category = self.mc.get_category('Tech House')
         self.assertEqual(category['slug'], 'tech-house')
+
+    def test_get_oauth_uri(self):
+        """ Test for a well formed OAuth URI.
+
+        Set up env variables MIXCLOUD_CLIENT_ID and MIXCLOUD_CLIENT_SECRET to
+        run this test.
+        """
+        client_id = os.environ['MIXCLOUD_CLIENT_ID']
+        redirect_uri = 'http://www.redirecthere.com'
+        oauth_uri = urlparse(self.mc.get_oauth_uri(client_id, redirect_uri))
+        location = oauth_uri.netloc
+        path = oauth_uri.path
+        query = oauth_uri.query
+        self.assertEqual(location, 'www.mixcloud.com')
+        self.assertEqual(path, '/oauth/authorize')
+        self.assertEqual(query, 'client_id={0}?redirect_uri={1}'\
+                         .format(client_id, redirect_uri))
+
 
 if __name__ == '__main__':
     unittest.main()

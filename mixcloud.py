@@ -28,3 +28,7 @@ class Mixcloud(object):
         name = slugify(unicode(name))
         return self.request('categories/' + name)
 
+    def get_oauth_uri(self, client_id, redirect_uri):
+        oauth_uri = 'https://www.mixcloud.com/oauth/authorize?client_id={0}?redirect_uri={1}'
+        return oauth_uri.format(client_id, redirect_uri)
+
