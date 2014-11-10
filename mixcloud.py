@@ -3,6 +3,7 @@ from slugify import slugify
 
 class Mixcloud(object):
     api_base = 'http://api.mixcloud.com/'
+    oauth_base = 'https://www.mixcloud.com/oauth'
     
     def request(self, resource):
         r  = requests.get(self.api_base + resource)
@@ -29,6 +30,6 @@ class Mixcloud(object):
         return self.request('categories/' + name)
 
     def get_oauth_uri(self, client_id, redirect_uri):
-        oauth_uri = 'https://www.mixcloud.com/oauth/authorize?client_id={0}?redirect_uri={1}'
+        oauth_uri = self.oauth_base + '/authorize?client_id={0}?redirect_uri={1}'
         return oauth_uri.format(client_id, redirect_uri)
 

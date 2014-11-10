@@ -70,7 +70,6 @@ class TestUsers(unittest.TestCase):
         self.assertEqual(query, 'client_id={0}?redirect_uri={1}'\
                          .format(client_id, redirect_uri))
 
-
 if __name__ == '__main__':
     unittest.main()
             
